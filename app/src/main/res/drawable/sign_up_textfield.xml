@@ -12,7 +12,7 @@
 
     <item android:state_pressed="true" android:state_focused="false">
         <shape>
-            <solid android:color="#FF8000"/>
+
             <stroke
                 android:width="2.3dp"
                 android:color="@color/textField_green" />
