@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primaryColor">#E50914</color>
+    <color name="textField_grey">#BFA9AA</color>
 </resources>
