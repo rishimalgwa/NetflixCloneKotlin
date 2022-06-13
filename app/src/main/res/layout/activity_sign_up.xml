@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".SignUpActivity">
+
+    <ImageView
+        android:id="@+id/signUpNetflixLogo"
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_netflix_full_logo"
+
+        />
+    <TextView
+        android:id="@+id/signUpSignInButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_in"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textAllCaps="true"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="16dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="16sp"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/signUpNetflixLogo"
+        android:orientation="vertical"
+        android:layout_margin="24dp"
+        android:gravity="center"
+        >
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ready to experience unlimited TV shows and movies?"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+
+            />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create an account to learn more about Netflix."
+            android:textSize="16sp"
+            android:layout_margin="16dp"
+            android:textColor="@color/black"
+
+            />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signUpEmailTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:textColor="@color/black"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="@string/email_address"
+android:textColorHint="@color/textField_grey"
+android:background="@drawable/sign_up_textfield"
+            />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signUpPasswordTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginTop="24dp"
+            android:textColor="@color/black"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="@string/password"
+            android:textColorHint="@color/textField_grey"
+            android:background="@drawable/sign_up_textfield"
+
+            />
+        <Button
+            android:id="@+id/signUpButton"
+
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+
+
+            android:layout_marginTop="24dp"
+            android:text="continue"
+
+            android:textColor="@color/white"
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
