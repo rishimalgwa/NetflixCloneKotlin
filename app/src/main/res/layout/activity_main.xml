@@ -5,14 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
+   <include
+       android:id="@+id/main_activity_appbar"
+       layout="@layout/custom_appbar"/>
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:orientation="horizontal"
+       app:layout_constraintTop_toBottomOf="@id/main_activity_appbar"
+       app:layout_constraintLeft_toLeftOf="parent"
+       app:layout_constraintRight_toRightOf="parent"
+       app:layout_constraintBottom_toBottomOf="parent"
+   >
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        >
+       <ImageView
+           android:id="@+id/main_poster_image"
+           android:layout_width="match_parent"
+           android:layout_height="230dp"
+           android:src="@drawable/netflix_poster"
+           android:scaleType="centerCrop"
 
+           />
+
+    </LinearLayout>
+   </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
