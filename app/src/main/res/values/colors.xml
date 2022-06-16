@@ -10,4 +10,5 @@
     <color name="primaryColor">#E50914</color>
     <color name="textField_grey">#716869</color>
     <color name="textField_green">#00C853</color>
+    <color name="dark_grey">#1F2120</color>
 </resources>
