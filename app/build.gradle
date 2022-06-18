@@ -2,7 +2,9 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
-
+def apiPropertiesFile = rootProject.file("app/apis.properties")
+def apiProperties = new Properties()
+apiProperties.load(new FileInputStream(apiPropertiesFile))
 android {
     compileSdk 32
 
@@ -14,12 +16,14 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", 'TMBD_API_KEY', apiProperties['TMBD_Api_Key']
     }
     buildFeatures {
         viewBinding true
     }
     buildTypes {
         release {
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -44,5 +48,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.github.bumptech.glide:glide:4.13.0'
     implementation 'com.google.android.material:material:1.7.0-alpha02'
-
+    implementation 'com.android.volley:volley:1.2.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
 }
