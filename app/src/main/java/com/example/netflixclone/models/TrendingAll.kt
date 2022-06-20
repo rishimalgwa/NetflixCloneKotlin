@@ -38,7 +38,7 @@ data class Result (
     val id: Long,
 
     @SerialName("original_language")
-    val originalLanguage: OriginalLanguage,
+    val originalLanguage: String,
 
     @SerialName("original_title")
     val originalTitle: String? = null,
@@ -74,22 +74,3 @@ data class Result (
     val originalName: String? = null
 )
 
-@Serializable
-enum class OriginalLanguage(val value: String) {
-    En("en"),
-    Zh("zh");
-
-    companion object : KSerializer<OriginalLanguage> {
-        override val descriptor: SerialDescriptor get() {
-            return PrimitiveSerialDescriptor("quicktype.OriginalLanguage", PrimitiveKind.STRING)
-        }
-        override fun deserialize(decoder: Decoder): OriginalLanguage = when (val value = decoder.decodeString()) {
-            "en" -> En
-            "zh" -> Zh
-            else -> throw IllegalArgumentException("OriginalLanguage could not parse: $value")
-        }
-        override fun serialize(encoder: Encoder, value: OriginalLanguage) {
-            return encoder.encodeString(value.value)
-        }
-    }
-}

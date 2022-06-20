@@ -4,8 +4,10 @@ import android.content.Context
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.Volley
+import com.example.netflixclone.daos.TrendingAllDao
 
-class MySingleton constructor(context: Context) {
+ class MySingleton constructor(context: Context) {
+
     companion object {
         @Volatile
         private var INSTANCE: MySingleton? = null
