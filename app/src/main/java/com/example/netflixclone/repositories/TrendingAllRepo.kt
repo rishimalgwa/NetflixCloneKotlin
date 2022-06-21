@@ -5,11 +5,12 @@ import androidx.lifecycle.LiveData
 import com.example.netflixclone.daos.TrendingAllDao
 import com.example.netflixclone.models.Result
 import com.example.netflixclone.models.TrendingAll
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class TrendingAllRepo(private val trendingAllDao: TrendingAllDao) {
-
-    fun getTrendingAll():ArrayList<Result>{
-        trendingAllDao.fetchData()
-        return  trendingAllDao.trendingAllList
-    }
+    val trendingAllList: LiveData<ArrayList<Result>> = trendingAllDao.fetchData()
+//   suspend fun getTrendingAll():LiveData<ArrayList<Result>>{
+//        return  trendingAllDao.fetchData()
+//    }
 }

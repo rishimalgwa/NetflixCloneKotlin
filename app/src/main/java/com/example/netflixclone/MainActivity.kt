@@ -29,8 +29,12 @@ class MainActivity : AppCompatActivity(), ITrendingAllRVAdapter {
         val adapter = TrendingAllRVAdapter(this,this)
         recyclerView.adapter = adapter
         trendingAllViewModel = ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(TrendingAllViewModel::class.java)
-        trendingAllViewModel.getTrendingAll()
-        adapter.updateList(trendingAllViewModel.trendingAllList)
+         trendingAllViewModel.trendingAllList.observe(this) { list ->
+             list?.let {
+                 adapter.updateList(list)
+             }
+         }
+
     }
 
     override fun onItemClicked() {
